@@ -1,7 +1,8 @@
 var monthlyCalendar = (function IFFE() {
     var WEEK_DAYS = {
         EN: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        PT: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado']
+        PT: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado'],
+        ES: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado']
     }
  
     /*
@@ -53,8 +54,8 @@ var monthlyCalendar = (function IFFE() {
         }
  
         // deal with middle rows
-        for (var i = 1; i <= numberOfDaysInCurrentMonth; i++) {
-            row.appendChild(createTableDataWithValue(i));
+        for (var day = 1; day <= numberOfDaysInCurrentMonth; day++) {
+            row.appendChild(createTableDataWithValue(day));
  
             if (numberOfSpacesAvaiableInCurrentRow === 1) {
                 tableBody.appendChild(row);
