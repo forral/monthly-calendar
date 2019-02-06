@@ -88,7 +88,20 @@ var monthlyCalendar = (function IFFE() {
     function addListerners() {
         table.addEventListener('click', function (e) {
             if (e.target.tagName.toLowerCase() === 'td') {
+                e.target.style.backgroundColor = 'red';
                 console.log(e.target.innerText);
+            }
+        });
+
+        table.addEventListener('mouseover', function (e) {
+            if (e.target.tagName.toLowerCase() === 'td' && e.target.innerText) {
+                e.target.style.backgroundColor = 'red';
+            }
+        });
+
+        table.addEventListener('mouseout', function (e) {
+            if (e.target.tagName.toLowerCase() === 'td' && e.target.innerText) {
+                e.target.style.backgroundColor = '';
             }
         });
     }
