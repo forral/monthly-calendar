@@ -4,9 +4,6 @@ var monthlyCalendar = (function IFFE() {
         PT: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado']
     }
  
-    var table = document.createElement('table');
-    table.id = 'table';
- 
     /*
     Find the week day for the January of 2019:
     getFirstWeekDayOfTheMonth(2019, 0);
@@ -79,6 +76,8 @@ var monthlyCalendar = (function IFFE() {
     }
  
     function buildCalendar(language, year, month) {
+        var table = document.createElement('table');
+        table.id = 'table';
         table.innerHTML = getTableHeader(language);
         table.appendChild(getTableBodyByMonth(year, month));
         document.body.appendChild(table);
